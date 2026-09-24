@@ -1,0 +1,177 @@
+/*Завдання 1*/
+table 
+{
+    border-collapse: collapse;
+}
+
+td 
+{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    color: #5C0029;
+}
+
+tr:first-child 
+{
+    background-color: #738f8f;
+}
+
+tr:nth-child(2) 
+{
+    background-color: #f5f573;
+}
+
+tr:first-child:hover 
+{
+    background-color: #f5f573;
+}
+
+tr:nth-child(2):hover 
+{
+    background-color: #738f8f;
+}
+
+/*Завдання 2. Position*/
+.position-table {
+    position: relative;
+    width: 900px;
+    height: 210px;
+    margin: 50px 20px;
+}
+
+.cell 
+{
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.cell1 
+{
+    left: 0;
+    top: 0;
+    width: 225px;
+    height: 100px;
+}
+
+.cell2 
+{
+    left: 225px;
+    top: 0;
+    width: 225px;
+    height: 50px;
+}
+
+.cell3 
+{
+    left: 225px;
+    top: 50px;
+    width: 225px;
+    height: 50px;
+}
+
+.cell4 
+{
+    left: 450px;
+    top: 0;
+    width: 450px;
+    height: 100px;
+}
+
+.cell5 
+{
+    left: 0;
+    top: 100px;
+    width: 225px;
+    height: 60px;
+}
+
+.cell6 
+{
+    left: 225px;
+    top: 100px;
+    width: 225px;
+    height: 60px;
+}
+
+.cell7 
+{
+    left: 450px;
+    top: 100px;
+    width: 225px;
+    height: 60px;
+}
+
+.cell8 
+{
+    left: 675px;
+    top: 100px;
+    width: 225px;
+    height: 60px;
+}
+
+.cell9 
+{
+    left: 0;
+    top: 160px;
+    width: 225px;
+    height: 50px;
+}
+
+.cell10 
+{
+    left: 225px;
+    top: 160px;
+    width: 225px;
+    height: 50px;
+}
+
+.cell11 
+{
+    left: 450px;
+    top: 160px;
+    width: 450px;
+    height: 50px;
+}
+
+/*Завдання 2. Transform*/
+.transform-figure 
+{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+}
+
+.square 
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+    left: 100px;
+    top: 100px;
+
+    border: 2px solid black;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.square1 
+{
+    background-color: lightblue;
+    transform: translate(0, -42px) rotate(45deg);
+}
+
+.square2 
+{
+    background-color: #ffff4d;
+    transform: translate(-58px, 65px) rotate(14deg);
+}
+
+.square3 
+{
+    background-color: #b82d6b;
+    transform: translate(58px, 65px) rotate(-14deg);
+}
