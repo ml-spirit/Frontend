@@ -1,0 +1,28 @@
+.element5 
+{
+    margin-left: 50px;
+}
+
+.changed 
+{
+    background-color: lightblue;
+    color: darkblue;
+}
+
+#cityImage 
+{
+    width: 400px;
+    height: auto;
+}
+
+.buttons 
+{
+    margin-top: 10px;
+}
+
+.buttons button 
+{
+    padding: 8px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+}
