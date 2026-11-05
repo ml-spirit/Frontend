@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Форма</title>
+</head>
+<body>
+    <h2>Лабораторна 5</h2>
+    <h3>Завдання 1</h3>
+
+    <form id="registrationForm">
+        <script>
+            function validateInput(id, pattern, error_message) {
+                const input = document.getElementById(id);
+
+                input.addEventListener("input", function() {
+                    if (!pattern.test(input.value)) {
+                        input.style.backgroundColor = "#ffcccc";
+                        input.setCustomValidity(error_message);
+                    } else {
+                        input.style.backgroundColor = "lightgreen";
+                        input.setCustomValidity("");
+                    }
+                });
+            }
+        </script>
+
+        <label for="pib">ПІБ:</label>
+        <input
+            type="text"
+            id="pib"
+            name="pib"
+            placeholder="ТТТТТТ Т. Т."
+            required
+        >
+        <br><br>
+
+        <!-- Group -->
+        <label for="group">Група:</label>
+        <input 
+            type="text" 
+            id="group" 
+            name="group" 
+            placeholder="ТТ-ЧЧ"
+            required
+        >
+        <br><br>
+
+        <!-- Phone -->
+        <label for="phone">Телефон:</label>
+        <input 
+            type="text" 
+            id="phone" 
+            name="phone"
+            placeholder="(ЧЧЧ)-ЧЧЧ-ЧЧ-ЧЧ"
+            required
+        >
+        <br><br>
+
+        <!-- Faculty -->
+        <label for="faculty">Факультет:</label>
+        <input 
+            type="text" 
+            id="faculty" 
+            name="faculty"
+            placeholder="ТТТТ"
+            required
+        >
+        <br><br>
+
+        <!-- Adress -->
+        <label for="address">Адреса:</label>
+        <input 
+            type="text" 
+            id="address" 
+            name="address"
+            placeholder="м. ЧЧЧЧЧЧ"
+            required
+        >
+        <br><br>
+
+        <script>
+            validateInput(
+                "pib",
+                /^[А-ЯІЇЄҐа-яіїєґ'-]+ [А-ЯІЇЄҐ]\. [А-ЯІЇЄҐ]\.$/u,
+                "Неправильний формат ПІБ"
+            );
+
+            validateInput(
+                "group",
+                /^[А-ЯІЇЄҐ]{2}-\d{2}$/,
+                "Неправильний формат групи! Приклад: ІО-41"
+            );
+
+            validateInput(
+                "phone",
+                /^\(\d{3}\)-\d{3}-\d{2}-\d{2}$/,
+                "Неправильний формат телефону! Приклад: (099)-123-45-67"
+            );
+
+            validateInput(
+                "faculty",
+                /^[А-ЯІЇЄҐа-яіїєґ]{4}$/,
+                "Неправильний формат факультету! Приклад: ІПСА"
+            );
+
+            validateInput(
+                "address",
+                /^м\. \d{6}$/,
+                "Неправильний формат адреси! Приклад: м. 123456"
+            );
+        </script>
+
+        <!-- Кнопки -->
+        <button type="submit">Відправити</button>
+        <br><br>
+
+        <div id="result" style="display: none;">
+            <h2>Введені дані</h2>
+            <p id="resultPib"></p>
+            <p id="resultGroup"></p>
+            <p id="resultPhone"></p>
+            <p id="resultFaculty"></p>
+            <p id="resultAddress"></p>
+        </div>
+        <br><br>
+
+        <script>
+            document.getElementById("registrationForm")
+                .addEventListener("submit", function(event) 
+                {
+                    event.preventDefault();
+
+                    if (!this.checkValidity()) 
+                    {
+                        this.reportValidity();
+                        return;
+                    }
+
+                    document.getElementById("resultPib").innerHTML =
+                        "<b>ПІБ:</b> " + document.getElementById("pib").value;
+
+                    document.getElementById("resultGroup").innerHTML =
+                        "<b>Група:</b> " + document.getElementById("group").value;
+
+                    document.getElementById("resultPhone").innerHTML =
+                        "<b>Телефон:</b> " + document.getElementById("phone").value;
+
+                    document.getElementById("resultFaculty").innerHTML =
+                        "<b>Факультет:</b> " + document.getElementById("faculty").value;
+
+                    document.getElementById("resultAddress").innerHTML =
+                        "<b>Адреса:</b> " + document.getElementById("address").value;
+
+                    document.getElementById("result").style.display = "block";
+                });
+        </script>
+    </form?>
+
+    <h3>Завдання 2</h3>
+        
+    <table style="border-collapse: collapse; table-layout: fixed;" id = "color_table">
+        <tr>
+            <td style="background-color: red;">1</td>
+            <td style="background-color: orange;">2</td>
+            <td style="background-color: yellow;" id="cell3">3</td>
+            <td style="background-color: green;">4</td>
+            <td style="background-color: blue;">5</td>
+            <td style="background-color: purple;">6</td>
+        </tr>
+        <tr>
+            <td style="background-color: pink;">7</td>
+            <td style="background-color: lightblue;">8</td>
+            <td style="background-color: lightgreen;">9</td>
+            <td style="background-color: coral;">10</td>
+            <td style="background-color: violet;">11</td>
+            <td style="background-color: cyan;">12</td>
+        </tr>
+        <tr>
+            <td style="background-color: salmon;">13</td>
+            <td style="background-color: gold;">14</td>
+            <td style="background-color: lime;">15</td>
+            <td style="background-color: skyblue;">16</td>
+            <td style="background-color: plum;">17</td>
+            <td style="background-color: beige;">18</td>
+        </tr>
+        <tr>
+            <td style="background-color: tomato;">19</td>
+            <td style="background-color: turquoise;">20</td>
+            <td style="background-color: khaki;">21</td>
+            <td style="background-color: orchid;">22</td>
+            <td style="background-color: tan;">23</td>
+            <td style="background-color: aquamarine;">24</td>
+        </tr>
+        <tr>
+            <td style="background-color: lavender;">25</td>
+            <td style="background-color: peachpuff;">26</td>
+            <td style="background-color: lightseagreen;">27</td>
+            <td style="background-color: thistle;">28</td>
+            <td style="background-color: wheat;">29</td>
+            <td style="background-color: lightcoral;">30</td>
+        </tr>
+        <tr>
+            <td style="background-color: hotpink;">31</td>
+            <td style="background-color: lightsteelblue;">32</td>
+            <td style="background-color: palegreen;">33</td>
+            <td style="background-color: moccasin;">34</td>
+            <td style="background-color: mediumslateblue;">35</td>
+            <td style="background-color: lightyellow;">36</td>
+        </tr>
+    </table>
+    <br><br>
+    
+    <input type="color" id="colorPicker" value="#ff0000">
+    <br><br>
+
+    <style>
+        td 
+        {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+
+    <script>
+        const cell3 = document.getElementById("cell3");
+        const colorPicker = document.getElementById("colorPicker");
+        const table = document.getElementById("color_table");
+
+        function randomColor() 
+        {
+            return "#" + Math.floor(Math.random() * 16777216)
+                .toString(16)
+                .padStart(6, "0");
+        }
+
+        cell3.addEventListener("mouseover", function() 
+        {
+            cell3.style.backgroundColor = randomColor();
+        });
+
+        cell3.addEventListener("click", function() 
+        {
+            cell3.style.backgroundColor = colorPicker.value;
+        });
+
+        cell3.addEventListener("dblclick", function() 
+        {
+            for (let i = 0; i < 6; i++) 
+            {
+                table.rows[i].cells[i].style.backgroundColor = colorPicker.value;
+            }
+        });
+    </script>
+
+</body>
+</html>
