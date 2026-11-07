@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6</title>
+
+    <style>
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #292d32;
+            background-color: #343a40;
+            color: white;
+            vertical-align: top;
+            overflow-wrap: anywhere;
+        }
+
+        td img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 15px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        #error {
+            margin: 50px 0 10px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Laboratorna 6</h1>
+    <h2>Lozinska Mariia IO-41</h2>
+
+    <div>
+        <h1 id="error">wait</h1>
+    </div>
+
+    <table>
+        <tr>
+            <td id="cell1">1</td>
+            <td id="cell2">2</td>
+            <td id="cell3">3</td>
+            <td id="cell4">4</td>
+            <td id="cell5">5</td>
+        </tr>
+    </table>
+
+    <script>
+        function getData(id)
+        {
+            fetch("https://randomuser.me/api")
+                .then(response =>
+                {
+                    if (!response.ok)
+                    {
+                        throw new Error("HTTP Error: " + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data =>
+                {
+                    document.getElementById(id).innerHTML =
+                        "<img src='" + data.results[0].picture.large + "' alt='User photo'>" +
+                        "<div class='info'>" +
+                        "<p><b>Phone:</b> " + data.results[0].phone + "</p>" +
+                        "<p><b>Coordinates:</b> " +
+                        data.results[0].location.coordinates.latitude + " x " +
+                        data.results[0].location.coordinates.longitude + "</p>" +
+                        "<p><b>Postcode:</b> " + data.results[0].location.postcode + "</p>" +
+                        "<p><b>Country:</b> " + data.results[0].location.country + "</p>" +
+                        "</div>";
+
+                    document.getElementById("error").textContent = "Success!";
+                    document.getElementById("error").className = "success";
+                })
+                .catch(error =>
+                {
+                    document.getElementById("error").textContent = "Error: " + error;
+                    document.getElementById("error").className = "error";
+                });
+        }
+
+        getData("cell1");
+        getData("cell2");
+        getData("cell3");
+        getData("cell4");
+        getData("cell5");
+    </script>
+
+</body>
+</html>
