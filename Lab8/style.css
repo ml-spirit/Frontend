@@ -1,0 +1,552 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Главный баннер */
+
+.hero {
+    height: 650px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Шапка сайта */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #ffb900;
+}
+
+/* Содержимое баннера */
+
+.hero-content {
+    padding-top: 160px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 0 20px;
+}
+
+/* Кнопка */
+
+.btn {
+    display: inline-block;
+    background-color: white;
+    color: #222;
+    padding: 14px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #ffb900;
+}
+
+/* Галерея животных */
+
+.gallery {
+    position: relative;
+    margin-top: -125px;
+}
+
+.gallery-images {
+    display: flex;
+}
+
+.gallery-images img {
+    width: 25%;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* Индикаторы галереи */
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 40px;
+}
+
+.dots span {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+}
+
+.dots .active {
+    background-color: #ffb900;
+}
+
+/* Блок выбора питомца */
+
+.select-pet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f7fc;
+    padding: 30px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.select-pet h2 {
+    font-size: 26px;
+    margin: 0;
+}
+
+/* Жёлтая кнопка */
+
+.yellow-btn {
+    background-color: #ffb900;
+    color: white;
+}
+
+.yellow-btn:hover {
+    background-color: #e5a600;
+}
+
+/* Информация о приюте */
+
+.about {
+    display: flex;
+    align-items: center;
+}
+
+.about img {
+    width: 50%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.about-content {
+    width: 50%;
+    padding: 30px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    max-width: 450px;
+    margin: 0 0 20px;
+}
+
+.about-content h3 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.about-content p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+/* Блок с видео */
+
+.video-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.video-preview video {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.video-preview img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Кнопка воспроизведения */
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+
+    background-color: white;
+    color: #ffb900;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background-color: #ffb900;
+    color: white;
+}
+
+.video-section h3 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.video-section p {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Этапы усыновления */
+
+.process {
+    background-color: #f8f7fc;
+    padding: 100px 0;
+}
+
+.process h2 {
+    font-size: 32px;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.section-description {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.process-items {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.process-item {
+    flex: 1;
+}
+
+.process-item i {
+    font-size: 35px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.process-item h3 {
+    font-size: 18px;
+}
+
+.process-item p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Отзывы пользователей */
+
+.testimonials {
+    padding: 100px 0;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.reviews {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.review {
+    flex: 1;
+    background-color: #f8f7fc;
+    padding: 30px;
+}
+
+.review h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.review p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Звёздочки рейтинга */
+
+.stars {
+    color: #ffb900;
+    font-size: 18px;
+}
+
+.stars span {
+    color: #aaa;
+}
+
+/* Баннер для волонтёров */
+
+.volunteer {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("images/volunteer.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+}
+
+.volunteer h2 {
+    font-size: 32px;
+    margin: 0 0 20px;
+}
+
+.volunteer p {
+    max-width: 750px;
+    margin: 0 auto 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.volunteer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Планшети */
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .gallery-images img {
+        height: 180px;
+    }
+
+    .process-items,
+    .reviews {
+        gap: 15px;
+    }
+
+    .review {
+        padding: 20px;
+    }
+}
+
+/* Мобільні телефони */
+
+@media (max-width: 768px) {
+
+    /* Шапка сайту */
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Головний банер */
+
+    .hero {
+        height: 550px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    /* Галерея */
+
+    .gallery {
+        margin-top: -60px;
+    }
+
+    .gallery-images {
+        flex-wrap: wrap;
+    }
+
+    .gallery-images img {
+        width: 50%;
+        height: 180px;
+    }
+
+    /* Вибір тваринки */
+
+    .select-pet {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Інформація */
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about img {
+        width: 100%;
+        height: 280px;
+    }
+
+    .about-content {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    /* Відео */
+
+    .video-section {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .video-preview video {
+    height: 250px;
+    }
+
+    /* Етапи всиновления та відгуки */
+
+    .process-items,
+    .reviews {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .process-item {
+        text-align: center;
+    }
+
+    /* Відступи секцій */
+
+    .process,
+    .testimonials,
+    .volunteer {
+        padding: 50px 0;
+    }
+
+    /* Заголовки */
+
+    .about-content h2,
+    .process h2,
+    .testimonials h2,
+    .volunteer h2 {
+        font-size: 26px;
+    }
+
+    /* Кнопки волонтерів */
+
+    .volunteer-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .process-item {
+        text-align: center;
+        min-width: 0;
+    }
+
+    .reviews {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
